@@ -1,0 +1,252 @@
+ **basic Linux commands** that are most commonly used and very helpful in **real-time situations** 
+----------------------------------------------------------------------------------------------------
+
+
+## 🧾 **File & Directory Commands**
+
+| Command                          | Use                                      |
+| -------------------------------- | ---------------------------------------- |
+| `ls`                             | List files/directories in current folder |
+| `ls -l`                          | Long listing (details)                   |
+| `ls -a`                          | Show hidden files (starting with `.`)    |
+| `cd folder_name`                 | Change directory                         |
+| `cd ..`                          | Go to parent directory                   |
+| `pwd`                            | Print current path                       |
+| `mkdir folder_name`              | Create new folder                        |
+| `rm file_name`                   | Delete file                              |
+| `rm -r folder_name`              | Delete folder and its content            |
+| `touch file.txt`                 | Create empty file                        |
+| `cp source dest`                 | Copy file/folder                         |
+| `mv old new`                     | Move or rename a file/folder             |
+| `cat file.txt`                   | Display file content                     |
+| `nano file.txt` / `vim file.txt` | Edit file in terminal                    |
+| `clear`                          | Clear the terminal screen                |
+
+
+
+
+## 🛠️ **System Commands**
+
+| Command        | Use                                    |
+| -------------- | -------------------------------------- |
+| `sudo command` | Run command with admin rights          |
+| `shutdown now` | Shutdown system                        |
+| `reboot`       | Restart system                         |
+| `top`          | Live system resource monitor           |
+| `htop`         | Better version of `top` (if installed) |
+| `df -h`        | Show disk space                        |
+| `free -h`      | Show memory usage                      |
+| `uname -a`     | System info                            |
+| `whoami`       | Show current user                      |
+
+
+
+
+## 📦 **Package Management (Debian/Ubuntu)**
+
+| Command                         | Use                 |
+| ------------------------------- | ------------------- |
+| `sudo apt update`               | Update package list |
+| `sudo apt upgrade`              | Upgrade packages    |
+| `sudo apt install package_name` | Install software    |
+| `sudo apt remove package_name`  | Remove software     |
+
+
+
+
+## 🔍 **Searching & Permissions**
+
+| Command                   | Use                   |
+| ------------------------- | --------------------- |
+| `find . -name "file.txt"` | Find a file           |
+| `grep "text" file.txt`    | Search text in a file |
+| `chmod +x file.sh`        | Make file executable  |
+| `chown user:group file`   | Change ownership      |
+
+
+
+
+## 📁 **Archive & Compression**
+
+| Command                         | Use             |
+| ------------------------------- | --------------- |
+| `tar -czvf file.tar.gz folder/` | Compress folder |
+| `tar -xzvf file.tar.gz`         | Extract archive |
+
+
+
+
+## 🌐 **Networking**
+
+| Command             | Use                       |
+| ------------------- | ------------------------- |
+| `ping google.com`   | Check internet connection |
+| `ifconfig` / `ip a` | Show network details      |
+| `curl url`          | Access web content        |
+| `wget url`          | Download file             |
+
+
+
+
+**Daily Use & Maintenance Commands**
+
+### 🔄 **System Updates & Cleaning**
+
+| Command               | Purpose                              | Example |
+| --------------------- | ------------------------------------ | ------- |
+| `sudo apt update`     | Refresh package list (Debian/Ubuntu) | —       |
+| `sudo apt upgrade`    | Upgrade installed packages           | —       |
+| `sudo apt autoremove` | Remove unused packages               | —       |
+| `sudo apt clean`      | Clean downloaded package files       | —       |
+| `sudo apt autoclean`  | Clean old package files              | —       |
+
+---
+
+### 🧹 **Cleaning & Freeing Space**
+
+| Command             | Purpose                                                 | Example                          |
+| ------------------- | ------------------------------------------------------- | -------------------------------- |
+| `du -sh *`          | Show size of folders/files                              | `du -sh /home/devika/*`          |
+| `df -h`             | Disk space usage (human readable)                       | —                                |
+| `ncdu`              | **Best interactive** disk usage analyzer *(install it)* | `sudo apt install ncdu` → `ncdu` |
+| `rm -rf ~/.cache/*` | Clear user cache safely                                 | Be careful!                      |
+
+
+
+
+### 🖥️ **Process & Service Monitoring**
+
+| Command            | Purpose                     | Example                    |
+| ------------------ | --------------------------- | -------------------------- |
+| `top` / `htop`     | Live system resource usage  | `htop` (install first)     |
+| `ps aux`           | List all processes          | —                          |
+| `kill` / `killall` | End processes               | `kill 1234`                |
+| `systemctl status` | Check system service status | `systemctl status apache2` |
+| `journalctl -xe`   | View logs                   | —                          |
+
+
+
+
+### 🔐 **User & Permissions**
+
+| Command | Purpose              | Example                    |
+| ------- | -------------------- | -------------------------- |
+| `sudo`  | Run as root          | `sudo nano file`           |
+| `chmod` | Set file permissions | `chmod +x script.sh`       |
+| `chown` | Change ownership     | `chown user:user file.txt` |
+
+
+
+
+### 💾 **Backup & Logs**
+
+| Command                           | Purpose                       | Example                   |
+| --------------------------------- | ----------------------------- | ------------------------- |
+| `tar -czvf backup.tar.gz folder/` | Create a compressed backup    | —                         |
+| `rsync -av folder1/ folder2/`     | Sync/backup files efficiently | —                         |
+| `cat`, `less`, `tail -f`          | View logs or files            | `tail -f /var/log/syslog` |
+
+
+
+
+## 💡 **Common Project Dev Commands**
+
+| Command          | Purpose         | Example          |
+| ---------------- | --------------- | ---------------- |
+| `python file.py` | Run Python file | `python3 app.py` |
+| `git status`     | Git changes     | `git status`     |
+| `code .`         | Open VS Code    | *(if installed)* |
+
+
+
+
+---
+
+
+
+
+## **Safe Terminal Cleanup Commands**
+
+
+### 🧼 1. **Clear terminal display only**
+
+```bash
+clear
+```
+
+
+
+
+### 🧹 2. **Clean package cache (Ubuntu/Debian)**
+
+```bash
+sudo apt clean
+```
+
+* Removes downloaded `.deb` packages in `/var/cache/apt/archives`
+* Doesn’t remove installed software.
+
+
+
+
+### 🗑️ 3. **Remove unnecessary packages**
+
+```bash
+sudo apt autoremove
+```
+
+* Removes packages no longer needed (e.g., old kernel versions, unused libs)
+
+
+
+
+### 🧰 4. **Fix half-installed packages**
+
+```bash
+sudo dpkg --configure -a
+```
+
+* Completes unfinished installations
+
+```bash
+sudo apt install -f
+```
+
+* Fixes broken dependencies (safe)
+
+
+
+
+### 🚿 5. **Remove old system logs**
+
+```bash
+sudo journalctl --vacuum-time=7d
+```
+
+* Deletes logs older than 7 days
+* Replace `7d` with `3d`, `1month`, etc., if needed
+
+
+
+
+### 🧹 6. **Clean user cache (Safe)**
+
+```bash
+rm -rf ~/.cache/*
+```
+
+* Deletes cache (safe, gets rebuilt)
+* Keeps your files and folders untouched
+
+
+
+
+❗Important Notes:
+
+* These commands **will not delete** your original directories, files, or system structure.
+* All are **commonly used by developers** and **system admins** for regular maintenance.
+
+---
+
+
+
